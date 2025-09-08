@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-qqwamilj-gitops
+  description: This is GitOps manifest for go-qqwamilj   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-qqwamilj
+    backstage.io/kubernetes-id: go-qqwamilj 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: rhtap-test-org/go-qqwamilj-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: rhtap-test-org.go-qqwamilj-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-qqwamilj
